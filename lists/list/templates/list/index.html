@@ -1,0 +1,28 @@
+{% extends "list/base.html" %}
+
+{% block header %}
+    <div>
+
+    </div>
+{% endblock %}
+
+
+{% block content %}
+    {% for w in words %}
+<div class="accordion" id="accordionExample{{ w.id }}">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="heading{{ w.id }}">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ w.id }}" aria-expanded="true" aria-controls="collapseOne">
+          <h5>{{ w.word }}</h5>
+      </button>
+    </h2>
+    <div id="collapse{{ w.id }}" class="accordion-collapse collapse collapse" aria-labelledby="heading{{ w.id }}" data-bs-parent="#accordionExample{{ w.id }}">
+      <div class="accordion-body">
+        {{ w.translation }}
+      </div>
+    </div>
+  </div>
+</div>
+
+    {% endfor %}
+{% endblock %}
