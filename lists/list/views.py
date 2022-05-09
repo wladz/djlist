@@ -7,3 +7,7 @@ from list.models import list_of_words
 def index(request):
     words = list_of_words.objects.all()
     return render(request, 'list/index.html', {'words' : words})
+
+def revers(request):
+    words = list_of_words.objects.all()
+    return render(request, 'list/revers.html', {'words' : words})
